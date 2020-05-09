@@ -13,7 +13,9 @@ const forecast = ((latitude,longitude,callback)=>{
            const weather_description = body.current.weather_descriptions[0];
            const current_temp = body.current.temperature;
            const feels_like = body.current.feelslike;
-            callback(undefined,weather_description +'. It is currently '+ current_temp +' degrees out. It feels like ' + feels_like + ' degrees out' );
+           const humidity = body.current.humidity;
+           
+            callback(undefined,weather_description +'. It is currently '+ current_temp +' degrees out. It feels like ' + feels_like + ' degrees out. The humidity is around ' + humidity + ' percent.' );
         }
     })
 });
